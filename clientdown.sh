@@ -4,9 +4,8 @@ while [ $i ]
 do
 cmd=$(ifconfig | grep "inet addr"| tr -s ' '| cut -d ' ' -f 3 | grep '172.*')
 if [[ -z $cmd ]]; then
-	#sudo dhclient -r eth0
-	#sudo dhclient eth0
-	echo "Found"
+	sudo dhclient -r eth0
+	sudo dhclient eth0
 else
 	echo "It is fixed"
 	break
